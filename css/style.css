@@ -760,7 +760,8 @@ body.nav-open .nav-toggle {
   grid-template-areas:
     "medal medal medal medal medal medal medal medal detail detail detail detail"
     "medal medal medal medal medal medal medal medal desc desc desc desc"
-    "media media media media media media media media media media media media";
+    "media media media media media media media media media media media media"
+    "alumni alumni alumni alumni alumni alumni alumni alumni alumni alumni alumni alumni";
   gap: var(--grid-gap);
 }
 
@@ -777,6 +778,19 @@ body.nav-open .nav-toggle {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--grid-gap);
   align-items: center;
+}
+
+/* 学长去向: 通栏宽卡，左侧文案 + 右侧占位图 */
+.alumni-card {
+  grid-area: alumni;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--grid-gap);
+  align-items: center;
+}
+
+.alumni-card .alumni-copy .card-title {
+  margin-bottom: 8px;
 }
 
 .proof-grid > :nth-child(2) {
@@ -1292,7 +1306,8 @@ html:not(.js) [data-reveal] {
     padding: 24px;
   }
 
-  .proof-card.span-2 {
+  .proof-card.span-2,
+  .alumni-card {
     grid-template-columns: 1fr;
   }
 
