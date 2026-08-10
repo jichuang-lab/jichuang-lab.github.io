@@ -908,6 +908,143 @@ body.nav-open .nav-toggle {
   object-fit: contain;
 }
 
+.video-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #1f1b16;
+}
+
+.hero-video-frame {
+  background: #1f1b16;
+}
+
+.hero-video-frame .video-player {
+  min-height: 350px;
+}
+
+/* 项目视频：一张精选实录 + 三列素材网格，避免十个播放器堆成单调长列表 */
+.video-section {
+  background: linear-gradient(180deg, rgba(253, 244, 230, 0.72), transparent 44%);
+}
+
+.video-feature {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.6fr);
+  gap: var(--grid-gap);
+  align-items: center;
+  margin-bottom: var(--grid-gap);
+  padding: 24px;
+}
+
+.video-feature-copy {
+  padding: 8px;
+}
+
+.video-feature-copy .card-title {
+  margin-top: 14px;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.video-index {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-text);
+  font: 700 0.72rem/1.2 monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.video-card {
+  overflow: hidden;
+  padding: 12px;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-border-strong);
+  box-shadow: var(--shadow-md), 0 0 24px var(--accent-1-soft);
+}
+
+.video-card .media-frame {
+  border-radius: var(--radius-sm);
+}
+
+.video-card .video-index,
+.video-title {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.video-card .video-index {
+  margin-top: 16px;
+}
+
+.video-more {
+  margin-top: 24px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.video-more summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  color: var(--text-1);
+  cursor: pointer;
+  list-style: none;
+}
+
+.video-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.video-more summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--glass-border-strong);
+  border-radius: 50%;
+  color: var(--accent-text);
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.video-more[open] summary::after {
+  transform: rotate(45deg);
+  background: var(--accent-1-soft);
+}
+
+.video-more-count {
+  margin-left: auto;
+  color: var(--text-2);
+  font-size: 0.85rem;
+}
+
+.video-more .video-grid {
+  padding-bottom: 4px;
+}
+
+.video-title {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 /* 占位块: 浅色渐变底 + 居中 SVG 轮廓图标 + 文案 */
 .media-frame .placeholder,
 .qr-frame .placeholder {
@@ -1230,6 +1367,14 @@ html:not(.js) [data-reveal] {
   .benefit-grid,
   .track-grid,
   .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-feature {
     grid-template-columns: 1fr;
   }
 
@@ -1684,5 +1829,14 @@ header.site-header {
   .hero-content { padding: 124px 20px 90px; }
   .hero-title { font-size: clamp(2.8rem, 13vw, 4.6rem); }
   .hero-media .media-frame { min-height: 260px; }
+  .hero-video-frame .video-player { min-height: 260px; }
   .nav-menu { background: rgba(255, 255, 255, 0.98); }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-feature {
+    padding: 16px;
+  }
 }
