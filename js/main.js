@@ -21,6 +21,7 @@
     initParallax();
     initHeaderState();
     initFooterYear();
+    initFutureQuestion();
   }
 
   // ---- reduced-motion 降级 ----
@@ -407,6 +408,37 @@
     var currentYear = String(new Date().getFullYear());
     yearElements.forEach(function (el) {
       el.textContent = currentYear;
+    });
+  }
+
+  // 隐藏前瞻彩蛋：输入 jichuang 后展示尚未公布的招新题入口
+  function initFutureQuestion() {
+    var dialog = document.getElementById('future-question');
+    var closeButton = document.getElementById('future-question-close');
+    if (!dialog || !closeButton || typeof dialog.showModal !== 'function') {
+      return;
+    }
+
+    var secret = 'jichuang';
+    var input = '';
+    document.addEventListener('keydown', function (event) {
+      if (event.key.length !== 1 || event.ctrlKey || event.metaKey || event.altKey) {
+        return;
+      }
+      input = (input + event.key.toLowerCase()).slice(-secret.length);
+      if (input === secret) {
+        dialog.showModal();
+        input = '';
+      }
+    });
+
+    closeButton.addEventListener('click', function () {
+      dialog.close();
+    });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) {
+        dialog.close();
+      }
     });
   }
 

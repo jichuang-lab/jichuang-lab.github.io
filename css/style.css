@@ -1817,6 +1817,49 @@ header.site-header {
 .tag { background: var(--accent-1-soft); border-color: rgba(217, 119, 6, 0.3); color: #b45309; }
 .site-footer { background: #ffffff; border-top-color: var(--glass-border); }
 
+.future-question {
+  width: min(420px, calc(100% - 40px));
+  padding: 32px;
+  border: 1px solid var(--accent-glow-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text-1);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  text-align: center;
+}
+
+.future-question::backdrop {
+  background: rgba(38, 33, 26, 0.28);
+  backdrop-filter: blur(4px);
+}
+
+.future-question-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.future-question h2 {
+  margin: 12px 0;
+  font-size: 1.7rem;
+}
+
+.future-question p {
+  margin-bottom: 24px;
+  color: var(--text-2);
+}
+
+.future-question .btn {
+  width: 100%;
+}
+
 @media (max-width: 900px) {
   .hero-content { grid-template-columns: 1fr; grid-template-areas: "copy" "media"; text-align: center; }
   .hero-eyebrow, .hero-sub, .hero-lead, .hero-desc, .hero-meta { margin-left: auto; margin-right: auto; text-align: center; }
