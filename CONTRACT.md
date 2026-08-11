@@ -1,4 +1,4 @@
-# 极创创新实验室 招新页 开发契约（Interface Contract）
+# 极创创新工作室 招新页 开发契约（Interface Contract）
 
 > 本契约定义 index.html / css/style.css / js/main.js 三者的公共接口。
 > 三个文件必须严格遵循本契约中的命名与结构，否则并行开发会导致互相不兼容。
