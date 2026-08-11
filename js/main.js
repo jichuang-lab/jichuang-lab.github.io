@@ -22,6 +22,7 @@
     initHeaderState();
     initFooterYear();
     initFutureQuestion();
+    initThemePreview();
   }
 
   // ---- reduced-motion 降级 ----
@@ -440,6 +441,16 @@
         dialog.close();
       }
     });
+  }
+
+  // 设计迭代预览：?theme=engineering / campus / night
+  function initThemePreview() {
+    var params = new URLSearchParams(window.location.search);
+    var theme = params.get('theme');
+    var themes = ['engineering', 'campus', 'night'];
+    if (themes.indexOf(theme) !== -1) {
+      document.body.setAttribute('data-theme', theme);
+    }
   }
 
   if (document.readyState === 'loading') {

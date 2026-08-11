@@ -2293,3 +2293,249 @@ header.site-header {
     line-height: 1.5;
   }
 }
+
+/* ==========================================================================
+   21 视觉版本预览
+   --------------------------------------------------------------------------
+   默认 engineering：高校工程蓝
+   ?theme=campus：校园编辑风
+   ?theme=night：深色实验室风
+   ========================================================================== */
+
+body[data-theme="engineering"] {
+  --bg: #f4f8fb;
+  --bg-solid: #ffffff;
+  --bg-elev: rgba(255, 255, 255, 0.86);
+  --bg-elev-soft: rgba(255, 255, 255, 0.68);
+  --bg-elev-subtle: rgba(10, 91, 143, 0.04);
+  --bg-elev-hover: rgba(255, 255, 255, 0.96);
+  --glass-border: rgba(17, 79, 119, 0.14);
+  --glass-border-strong: rgba(17, 79, 119, 0.3);
+  --accent-1: #0878c9;
+  --accent-2: #19b8d2;
+  --accent-1-soft: rgba(8, 120, 201, 0.1);
+  --accent-1-mid: rgba(8, 120, 201, 0.25);
+  --accent-1-glow: rgba(8, 120, 201, 0.1);
+  --accent-1-glow-strong: rgba(8, 120, 201, 0.15);
+  --accent-1-glow-soft: rgba(8, 120, 201, 0.06);
+  --accent-2-glow: rgba(25, 184, 210, 0.14);
+  --accent-2-glow-soft: rgba(25, 184, 210, 0.08);
+  --accent-glow-border: rgba(8, 120, 201, 0.38);
+  --accent-text: #075d9c;
+  --text-1: #102b40;
+  --text-2: #506675;
+  --selection-bg: rgba(8, 120, 201, 0.18);
+  --gradient-accent: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+  --gradient-text: linear-gradient(135deg, #075d9c, #0878c9);
+  --gradient-btn: linear-gradient(135deg, #0878c9, #075d9c);
+  --bg-placeholder-from: #e5f2f8;
+  --bg-placeholder-to: #cfe5f0;
+  --shadow-sm: 0 2px 12px rgba(17, 79, 119, 0.08);
+  --shadow-md: 0 14px 34px rgba(17, 79, 119, 0.12);
+  --shadow-glow: 0 0 26px rgba(8, 120, 201, 0.2);
+  --shadow-glow-strong: 0 0 44px rgba(8, 120, 201, 0.28);
+  background-image: linear-gradient(rgba(17, 79, 119, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 79, 119, 0.045) 1px, transparent 1px);
+}
+
+body[data-theme="engineering"] header.site-header {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body[data-theme="engineering"] .hero {
+  background: radial-gradient(ellipse 70% 60% at 78% 22%, rgba(25, 184, 210, 0.16), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(8, 120, 201, 0.1), transparent 65%),
+    linear-gradient(135deg, #ffffff 0%, #edf7fb 58%, #f4f8fb 100%);
+}
+
+body[data-theme="engineering"] .hero::after {
+  background: linear-gradient(90deg, transparent 0 68%, rgba(8, 120, 201, 0.08) 68% 68.1%, transparent 68.1%),
+    linear-gradient(180deg, transparent 0 74%, rgba(8, 120, 201, 0.08) 74% 74.1%, transparent 74.1%);
+}
+
+body[data-theme="engineering"] .hero-sub,
+body[data-theme="engineering"] .hero-media .placeholder-text {
+  color: var(--text-2);
+}
+
+body[data-theme="engineering"] .section:nth-of-type(even) {
+  background: rgba(231, 244, 250, 0.56);
+}
+
+body[data-theme="engineering"] .glass-card,
+body[data-theme="engineering"] .benefit-card,
+body[data-theme="engineering"] .proof-card,
+body[data-theme="engineering"] .track-card,
+body[data-theme="engineering"] .qr-card,
+body[data-theme="engineering"] .timeline-item {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(244, 250, 253, 0.82));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+body[data-theme="engineering"] .tag {
+  background: var(--accent-1-soft);
+  border-color: rgba(8, 120, 201, 0.24);
+  color: var(--accent-text);
+}
+
+body[data-theme="engineering"] #proof::before {
+  background: radial-gradient(circle at 18% 30%, rgba(8, 120, 201, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(25, 184, 210, 0.1), transparent 42%),
+    radial-gradient(circle at 80% 85%, rgba(8, 120, 201, 0.08), transparent 40%);
+}
+
+body[data-theme="engineering"] .site-footer {
+  background: #ffffff;
+}
+
+/* 校园编辑风：更温和、更像一张精心排版的学院招新海报 */
+body[data-theme="campus"] {
+  --bg: #fbf8f2;
+  --bg-solid: #fffdf9;
+  --bg-elev: rgba(255, 253, 249, 0.88);
+  --bg-elev-soft: rgba(255, 253, 249, 0.72);
+  --bg-elev-subtle: rgba(107, 77, 38, 0.04);
+  --bg-elev-hover: rgba(255, 253, 249, 0.98);
+  --glass-border: rgba(111, 83, 49, 0.16);
+  --glass-border-strong: rgba(111, 83, 49, 0.3);
+  --accent-1: #0d78a5;
+  --accent-2: #e39a3b;
+  --accent-1-soft: rgba(13, 120, 165, 0.1);
+  --accent-1-mid: rgba(13, 120, 165, 0.24);
+  --accent-1-glow: rgba(13, 120, 165, 0.1);
+  --accent-1-glow-strong: rgba(13, 120, 165, 0.16);
+  --accent-1-glow-soft: rgba(13, 120, 165, 0.06);
+  --accent-2-glow: rgba(227, 154, 59, 0.15);
+  --accent-2-glow-soft: rgba(227, 154, 59, 0.08);
+  --accent-glow-border: rgba(13, 120, 165, 0.36);
+  --accent-text: #0b6289;
+  --text-1: #242a2d;
+  --text-2: #626467;
+  --gradient-accent: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+  --gradient-text: linear-gradient(135deg, #0b6289, #0d78a5);
+  --gradient-btn: linear-gradient(135deg, #0d78a5, #095a7c);
+  --bg-placeholder-from: #f5eee2;
+  --bg-placeholder-to: #e9dfcf;
+  background-image: linear-gradient(rgba(111, 83, 49, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 83, 49, 0.045) 1px, transparent 1px);
+}
+
+body[data-theme="campus"] .hero {
+  background: radial-gradient(ellipse 70% 60% at 78% 22%, rgba(227, 154, 59, 0.14), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(13, 120, 165, 0.1), transparent 65%),
+    linear-gradient(135deg, #fffdf9 0%, #f7f0e5 58%, #fbf8f2 100%);
+}
+
+body[data-theme="campus"] .glass-card,
+body[data-theme="campus"] .benefit-card,
+body[data-theme="campus"] .proof-card,
+body[data-theme="campus"] .track-card,
+body[data-theme="campus"] .qr-card,
+body[data-theme="campus"] .timeline-item {
+  background: linear-gradient(145deg, rgba(255, 253, 249, 0.94), rgba(250, 246, 238, 0.84));
+}
+
+/* 深色实验室风：突出电路、仪器和夜间调试气质 */
+body[data-theme="night"] {
+  --bg: #071521;
+  --bg-solid: #0b1d2c;
+  --bg-elev: rgba(13, 34, 49, 0.82);
+  --bg-elev-soft: rgba(13, 34, 49, 0.7);
+  --bg-elev-subtle: rgba(135, 222, 245, 0.05);
+  --bg-elev-hover: rgba(18, 46, 64, 0.94);
+  --glass-border: rgba(145, 216, 238, 0.18);
+  --glass-border-strong: rgba(145, 216, 238, 0.38);
+  --accent-1: #36c8ef;
+  --accent-2: #9be85d;
+  --accent-1-soft: rgba(54, 200, 239, 0.12);
+  --accent-1-mid: rgba(54, 200, 239, 0.28);
+  --accent-1-glow: rgba(54, 200, 239, 0.12);
+  --accent-1-glow-strong: rgba(54, 200, 239, 0.2);
+  --accent-1-glow-soft: rgba(54, 200, 239, 0.07);
+  --accent-2-glow: rgba(155, 232, 93, 0.14);
+  --accent-2-glow-soft: rgba(155, 232, 93, 0.08);
+  --accent-glow-border: rgba(54, 200, 239, 0.45);
+  --accent-text: #87def2;
+  --text-1: #effaff;
+  --text-2: #a7bfca;
+  --selection-bg: rgba(54, 200, 239, 0.24);
+  --gradient-accent: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+  --gradient-text: linear-gradient(135deg, #9be85d, #36c8ef);
+  --gradient-btn: linear-gradient(135deg, #119fc5, #087a9c);
+  --bg-placeholder-from: #173b4d;
+  --bg-placeholder-to: #0c2636;
+  --shadow-sm: 0 2px 16px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 18px 42px rgba(0, 0, 0, 0.24);
+  --shadow-glow: 0 0 30px rgba(54, 200, 239, 0.22);
+  --shadow-glow-strong: 0 0 48px rgba(54, 200, 239, 0.32);
+  background-image: linear-gradient(rgba(145, 216, 238, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 216, 238, 0.045) 1px, transparent 1px);
+}
+
+body[data-theme="night"] header.site-header {
+  background: rgba(7, 21, 33, 0.86);
+}
+
+body[data-theme="night"] .hero {
+  background: radial-gradient(ellipse 70% 60% at 78% 22%, rgba(54, 200, 239, 0.2), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(155, 232, 93, 0.1), transparent 65%),
+    linear-gradient(135deg, #0b1d2c 0%, #071521 100%);
+}
+
+body[data-theme="night"] .hero-sub,
+body[data-theme="night"] .hero-media .placeholder-text {
+  color: var(--text-2);
+}
+
+body[data-theme="night"] .section:nth-of-type(even) {
+  background: rgba(11, 29, 44, 0.62);
+}
+
+body[data-theme="night"] .glass-card,
+body[data-theme="night"] .benefit-card,
+body[data-theme="night"] .proof-card,
+body[data-theme="night"] .track-card,
+body[data-theme="night"] .qr-card,
+body[data-theme="night"] .timeline-item {
+  background: linear-gradient(145deg, rgba(18, 47, 64, 0.88), rgba(10, 31, 46, 0.8));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="night"] .site-logo,
+body[data-theme="night"] .nav-link,
+body[data-theme="night"] .nav-toggle,
+body[data-theme="night"] .btn-ghost {
+  color: var(--text-1);
+}
+
+body[data-theme="night"] .nav-menu {
+  background: rgba(7, 21, 33, 0.98);
+}
+
+body[data-theme="night"] .side-nav {
+  background: rgba(13, 34, 49, 0.9);
+}
+
+body[data-theme="night"] .tag {
+  background: var(--accent-1-soft);
+  border-color: var(--glass-border);
+  color: var(--accent-text);
+}
+
+body[data-theme="night"] #proof::before {
+  background: radial-gradient(circle at 18% 30%, rgba(54, 200, 239, 0.14), transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(155, 232, 93, 0.1), transparent 42%),
+    radial-gradient(circle at 80% 85%, rgba(54, 200, 239, 0.1), transparent 40%);
+}
+
+body[data-theme="night"] .site-footer {
+  background: #06131e;
+}
+
+body[data-theme="night"] .future-question {
+  background: rgba(13, 34, 49, 0.98);
+}
+
+body[data-theme="night"] .future-question::backdrop {
+  background: rgba(0, 5, 10, 0.6);
+}
