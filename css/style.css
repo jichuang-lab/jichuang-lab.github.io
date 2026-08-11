@@ -1611,16 +1611,15 @@ header.site-header {
 }
 
 .site-logo::before {
-  content: "JC";
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--accent-1);
-  border-radius: 8px;
-  color: var(--accent-1);
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
+  display: none;
+}
+
+.site-logo-image {
+  display: block;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .site-logo,
@@ -1816,6 +1815,19 @@ header.site-header {
 .media-frame .placeholder, .qr-frame .placeholder { background: linear-gradient(135deg, var(--bg-placeholder-from), var(--bg-placeholder-to)); border-color: var(--glass-border); }
 .tag { background: var(--accent-1-soft); border-color: rgba(217, 119, 6, 0.3); color: #b45309; }
 .site-footer { background: #ffffff; border-top-color: var(--glass-border); }
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand-image {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
 
 .future-question {
   width: min(420px, calc(100% - 40px));
