@@ -300,9 +300,10 @@
       var progress = Math.min((timestamp - startTime) / duration, 1);
       var eased = easeOutCubic(progress);
       var current = target * eased;
+      var shown = target % 1 === 0 ? Math.round(current) : current;
 
       if (progress < 1) {
-        el.textContent = prefix + formatCountValue(current) + suffix;
+        el.textContent = prefix + formatCountValue(shown) + suffix;
         window.requestAnimationFrame(frame);
       } else {
         el.textContent = prefix + formatCountValue(target) + suffix;
