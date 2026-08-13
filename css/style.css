@@ -1201,6 +1201,126 @@ body.nav-open .nav-toggle {
 }
 
 /* ==========================================================================
+   13.1 学习路线 Learn
+   ========================================================================== */
+.learn-tongshi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 28px;
+  margin-bottom: var(--grid-gap);
+  padding: 24px 32px;
+}
+
+.learn-tongshi-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-1);
+}
+
+.learn-tongshi-desc {
+  flex: 1 1 320px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.learn-tongshi .tag-list {
+  flex: 1 1 100%;
+  margin-top: 2px;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+.learn-column {
+  padding: 32px;
+}
+
+.learn-route {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-text);
+}
+
+.learn-column .card-title {
+  margin-bottom: 8px;
+}
+
+.learn-intro {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.learn-list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: learn;
+}
+
+.learn-item {
+  position: relative;
+  padding-left: 46px;
+}
+
+.learn-item::before {
+  counter-increment: learn;
+  content: counter(learn, decimal-leading-zero);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  font: 700 0.8rem/1 monospace;
+  letter-spacing: 0.08em;
+  color: var(--accent-text);
+}
+
+.learn-item h4 {
+  margin-bottom: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.learn-item p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.learn-attitude {
+  margin-top: var(--grid-gap);
+  padding: 32px;
+  text-align: center;
+}
+
+.learn-attitude .card-title {
+  margin-bottom: 10px;
+}
+
+.learn-attitude p {
+  max-width: 620px;
+  margin: 0 auto 20px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-2);
+}
+
+/* ==========================================================================
    14 招新流程 Roadmap
    ========================================================================== */
 .timeline {
@@ -1458,6 +1578,7 @@ html:not(.js) [data-reveal] {
   .quick-grid,
   .benefit-grid,
   .track-grid,
+  .learn-grid,
   .proof-grid {
     grid-template-columns: 1fr;
   }
@@ -1666,6 +1787,13 @@ body.reduced-motion .scroll-hint {
   background:
     linear-gradient(180deg, transparent 0 70%, var(--bg-elev-subtle) 70% 70.5%, transparent 70.5% 100%),
     linear-gradient(90deg, transparent 0 8%, var(--bg-elev-subtle) 8% 8.3%, transparent 8.3% 92%, var(--bg-elev-subtle) 92% 92.3%, transparent 92.3% 100%);
+}
+
+/* 05.1 学习路线（#learn）—— 路径感：双对角线引导 */
+#learn::before {
+  background:
+    linear-gradient(120deg, transparent 0 62%, var(--accent-2-glow-soft) 62% 66%, transparent 66% 100%),
+    linear-gradient(300deg, transparent 0 58%, var(--accent-1-glow-soft) 58% 63%, transparent 63% 100%);
 }
 
 /* 06 流程（#roadmap）—— 序列/时间线：竖向引导线 + 分段渐变 */
@@ -2448,6 +2576,15 @@ header.site-header {
 
   .apply-box {
     padding: 28px 18px;
+  }
+
+  .learn-tongshi,
+  .learn-attitude {
+    padding: 20px;
+  }
+
+  .learn-item {
+    padding-left: 38px;
   }
 
   .apply-info {

@@ -20,10 +20,11 @@
 | `#resources` | What You Get | 资源 |
 | `#proof` | 成果 Proof | 成果 |
 | `#tracks` | 招新方向 | 方向 |
+| `#learn` | 学习路线（通识/软件/硬件路线） | 路线 |
 | `#roadmap` | 招新流程 | 流程 |
 | `#apply` | 报名 | 报名 |
 
-导航栏固定链接：`#resources` `#proof` `#tracks` `#roadmap` `#apply`。
+导航栏固定链接：`#resources` `#proof` `#tracks` `#learn` `#roadmap` `#apply`。
 
 ## 3. 全局 class 命名（CSS 必须实现，HTML 必须使用）
 
@@ -73,6 +74,11 @@
 ### 方向 Tracks
 - `.track-grid` — 两卡片布局
 - `.track-card` — 单个方向卡（`.track-icon`、`.card-title`、`.card-desc`、`.tag-list` 技术标签组）
+
+### 学习路线 Learn
+- `.learn-tongshi` — 通识篇横条（`.learn-tongshi-title` / `.learn-tongshi-desc` + `.tag-list`）
+- `.learn-grid` — 软件/硬件两列网格
+- `.learn-column` — 单列路线卡（`.learn-route` 路线标签、`.card-title`、`.learn-intro` 引言、`.learn-list` 有序步骤列表 `.learn-item`：`h4` 标题 + `p` 描述）
 
 ### 流程 Roadmap
 - `.timeline` — 时间线容器、`.timeline-item` 单节点（`.tl-phase` 阶段名、`.tl-title`、`.tl-desc`）
