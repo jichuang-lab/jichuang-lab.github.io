@@ -23,7 +23,6 @@
     initFooterYear();
     initFutureQuestion();
     initThemePreview();
-    initMobileBenefitDetails();
   }
 
   // ---- reduced-motion 降级 ----
@@ -451,27 +450,6 @@
     var themes = ['engineering', 'campus', 'night'];
     if (themes.indexOf(theme) !== -1) {
       document.body.setAttribute('data-theme', theme);
-    }
-  }
-
-  function initMobileBenefitDetails() {
-    var details = Array.prototype.slice.call(document.querySelectorAll('.benefit-more'));
-    if (!details.length || !window.matchMedia) {
-      return;
-    }
-
-    var mobileQuery = window.matchMedia('(max-width: 768px)');
-    var sync = function () {
-      details.forEach(function (detail) {
-        detail.open = !mobileQuery.matches;
-      });
-    };
-
-    sync();
-    if (typeof mobileQuery.addEventListener === 'function') {
-      mobileQuery.addEventListener('change', sync);
-    } else if (typeof mobileQuery.addListener === 'function') {
-      mobileQuery.addListener(sync);
     }
   }
 

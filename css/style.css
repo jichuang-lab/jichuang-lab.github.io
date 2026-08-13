@@ -744,14 +744,6 @@ body.nav-open .nav-toggle {
   height: 100%;
 }
 
-.benefit-more summary {
-  display: none;
-}
-
-.benefit-more .card-desc {
-  margin: 0;
-}
-
 /* ==========================================================================
    11 成果 Proof (Bento Grid)
    --------------------------------------------------------------------------
@@ -2373,34 +2365,6 @@ header.site-header {
 
   .benefit-card {
     min-height: 0;
-  }
-
-  .benefit-more summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid var(--glass-border);
-    color: var(--accent-text);
-    font-size: 0.82rem;
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .benefit-more summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .benefit-more summary::after {
-    content: "+";
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-
-  .benefit-more[open] summary::after {
-    content: "−";
   }
 
   .benefit-num,

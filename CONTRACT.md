@@ -18,13 +18,16 @@
 | `#hero` | 首屏 Hero | - |
 | `#tracks-quick` | 参与信息（方向/校区/门槛） | - |
 | `#resources` | What You Get | 资源 |
-| `#proof` | 成果 Proof | 成果 |
 | `#tracks` | 招新方向 | 方向 |
 | `#learn` | 学习路线（通识/软件/硬件路线） | 路线 |
+| `#videos` | 项目实录 | 实录 |
+| `#moments` | 现场 | 现场 |
+| `#proof` | 成果 Proof | 成果 |
 | `#roadmap` | 招新流程 | 流程 |
 | `#apply` | 报名 | 报名 |
 
-导航栏固定链接：`#resources` `#proof` `#tracks` `#learn` `#roadmap` `#apply`。
+页面顺序即上表顺序：参与路径（资源→方向→路线）→ 证明区（实录→现场→成果）→ 行动（流程→报名）。
+导航栏固定链接：`#resources` `#tracks` `#learn` `#videos` `#moments` `#proof` `#roadmap` `#apply`。
 
 ## 3. 全局 class 命名（CSS 必须实现，HTML 必须使用）
 
