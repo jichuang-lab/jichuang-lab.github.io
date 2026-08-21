@@ -607,7 +607,7 @@ body.nav-open .nav-toggle {
 }
 
 .hero-media {
-  max-width: 720px;
+  max-width: 820px;
   margin: 40px auto 0;
 }
 
@@ -1143,6 +1143,19 @@ body.lightbox-open {
 
 .media-frame img.fit-contain,
 .qr-frame img.fit-contain {
+  object-fit: contain;
+}
+
+/* 学长去向的实习截图：保留原图比例，避免被裁切成奇怪的窄条 */
+.internship-frame {
+  aspect-ratio: auto;
+  background: var(--bg-elev-subtle);
+}
+
+.internship-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
   object-fit: contain;
 }
 
@@ -2534,7 +2547,7 @@ header.site-header {
   }
 
   .hero-media .media-frame {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .hero-media .media-frame {

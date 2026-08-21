@@ -471,9 +471,6 @@
         startX = event.clientX;
         startScroll = carousel.scrollLeft;
         carousel.classList.add('is-dragging');
-        if (typeof carousel.setPointerCapture === 'function') {
-          carousel.setPointerCapture(event.pointerId);
-        }
       });
 
       carousel.addEventListener('pointermove', function (event) {
