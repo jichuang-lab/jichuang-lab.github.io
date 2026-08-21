@@ -23,6 +23,7 @@
     initFooterYear();
     initFutureQuestion();
     initThemePreview();
+    initDragCarousels();
   }
 
   // ---- reduced-motion 降级 ----
@@ -452,6 +453,79 @@
     if (themes.indexOf(theme) !== -1) {
       document.body.setAttribute('data-theme', theme);
     }
+  }
+
+  // 获奖图片拖拽相册：指针拖拽 + 左右按钮，兼容鼠标与触摸
+  function initDragCarousels() {
+    var carousels = Array.prototype.slice.call(document.querySelectorAll('[data-drag-carousel]'));
+    carousels.forEach(function (carousel) {
+      var isDown = false;
+      var startX = 0;
+      var startScroll = 0;
+      var moved = false;
+
+      carousel.addEventListener('pointerdown', function (event) {
+        isDown = true;
+        moved = false;
+        startX = event.clientX;
+        startScroll = carousel.scrollLeft;
+        carousel.classList.add('is-dragging');
+        if (typeof carousel.setPointerCapture === 'function') {
+          carousel.setPointerCapture(event.pointerId);
+        }
+      });
+
+      carousel.addEventListener('pointermove', function (event) {
+        if (!isDown) {
+          return;
+        }
+        var deltaX = event.clientX - startX;
+        if (Math.abs(deltaX) > 4) {
+          moved = true;
+        }
+        carousel.scrollLeft = startScroll - deltaX;
+      });
+
+      var endDrag = function () {
+        isDown = false;
+        carousel.classList.remove('is-dragging');
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('pointerleave', endDrag);
+
+      // 拖拽后阻止误触链接/图片
+      carousel.addEventListener(
+        'click',
+        function (event) {
+          if (moved) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        },
+        true
+      );
+
+      var stepSize = function () {
+        var item = carousel.querySelector('.drag-item');
+        if (item) {
+          return item.getBoundingClientRect().width + 16;
+        }
+        return carousel.clientWidth * 0.8;
+      };
+      var prev = carousel.parentNode.querySelector('[data-drag-prev]');
+      var next = carousel.parentNode.querySelector('[data-drag-next]');
+      if (prev) {
+        prev.addEventListener('click', function () {
+          carousel.scrollBy({ left: -stepSize(), behavior: 'smooth' });
+        });
+      }
+      if (next) {
+        next.addEventListener('click', function () {
+          carousel.scrollBy({ left: stepSize(), behavior: 'smooth' });
+        });
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

@@ -838,6 +838,104 @@ body.nav-open .nav-toggle {
   color: var(--text-1);
 }
 
+/* 获奖图片拖拽相册 */
+.award-gallery {
+  padding: 28px;
+}
+
+.award-gallery-head {
+  margin-bottom: 18px;
+}
+
+.award-gallery-head .kicker {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.award-gallery-head .card-desc {
+  margin-top: 6px;
+  color: var(--text-2);
+}
+
+.drag-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 6px;
+  cursor: grab;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.drag-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.drag-carousel.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.drag-track {
+  display: flex;
+  gap: 16px;
+}
+
+.drag-item {
+  flex: 0 0 auto;
+  width: clamp(240px, 32vw, 440px);
+  margin: 0;
+  scroll-snap-align: start;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-elev-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.drag-item img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 24vw, 300px);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.drag-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.drag-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--glass-border-strong);
+  border-radius: 50%;
+  background: var(--bg-elev);
+  color: var(--accent-text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.drag-btn:hover {
+  background: var(--accent-1-soft);
+  border-color: var(--accent-glow-border);
+  transform: translateY(-2px);
+}
+
+.drag-btn:active {
+  transform: translateY(0);
+}
+
 .proof-stats {
   display: flex;
   flex-wrap: wrap;
@@ -864,6 +962,27 @@ body.nav-open .nav-toggle {
 
 .stat-label {
   font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.stat-sub {
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+
+.proof-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.proof-hero-head .kicker {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.proof-hero-head .card-desc {
+  margin-top: 6px;
   color: var(--text-2);
 }
 
@@ -2489,9 +2608,35 @@ header.site-header {
     grid-area: auto !important;
   }
 
+  .award-gallery {
+    padding: 18px;
+  }
+
+  .drag-item {
+    width: 82vw;
+  }
+
+  .drag-item img {
+    height: 220px;
+  }
+
+  .drag-controls {
+    margin-top: 14px;
+  }
+
+  .drag-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
   .proof-card.span-2,
   .alumni-card {
     display: block;
+  }
+
+  .proof-hero {
+    gap: 18px;
   }
 
   .proof-medal {
@@ -2499,7 +2644,7 @@ header.site-header {
   }
 
   .proof-stats {
-    gap: 20px;
+    gap: 22px 28px;
     margin-top: 18px;
   }
 
