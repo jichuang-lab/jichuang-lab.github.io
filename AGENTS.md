@@ -21,6 +21,7 @@ Commits follow conventional style (`feat:`, `fix:`, `chore:`), messages in Engli
 - Mobile (`<=768px`) is a deliberately separate single-column design — keep desktop-only patterns from leaking in, and add matching mobile rules when adding components.
 - Award gallery `.drag-carousel`: do NOT call `setPointerCapture` on the carousel — it redirects the subsequent `click` to the container, so per-item click handlers (the lightbox) never fire. Item `<img>`s use `pointer-events:none`; bind clicks to `.drag-item`.
 - Tall screenshots (e.g., internship offer): never force `.ratio-*` frames — `object-fit: cover` crops them into weird strips. Use the `.internship-frame` pattern (aspect-ratio auto, `object-fit: contain`).
+- Cards holding large photos (`.alumni-card`): keep `min-width: 0` on the card and its children, and `max-width: 100%` on `.media-frame` — intrinsic image widths otherwise blow out grid tracks at narrow viewports (clipped by `overflow-x:hidden`, looks like an unscaled cropped photo). Ship photos pre-scaled (~1600px wide), never camera-original.
 - Counters: `<span data-count="N">0</span>` animates 0→N; put suffixes like `+` outside the span.
 
 ## Theming

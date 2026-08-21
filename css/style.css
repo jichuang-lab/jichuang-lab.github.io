@@ -787,6 +787,12 @@ body.nav-open .nav-toggle {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--grid-gap);
   align-items: center;
+  min-width: 0;
+}
+
+/* 防止大图的固有宽度通过 grid item 自动最小尺寸撑爆轨道 */
+.alumni-card > * {
+  min-width: 0;
 }
 
 .alumni-card .alumni-copy .card-title {
@@ -1116,6 +1122,7 @@ body.lightbox-open {
 .media-frame {
   position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--bg-placeholder-to);
@@ -1155,7 +1162,6 @@ body.lightbox-open {
 .internship-frame img {
   width: 100%;
   height: auto;
-  max-height: 78vh;
   object-fit: contain;
 }
 
