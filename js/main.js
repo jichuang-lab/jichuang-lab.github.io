@@ -24,6 +24,7 @@
     initFutureQuestion();
     initThemePreview();
     initDragCarousels();
+    initLightbox();
   }
 
   // ---- reduced-motion 降级 ----
@@ -524,6 +525,107 @@
         next.addEventListener('click', function () {
           carousel.scrollBy({ left: stepSize(), behavior: 'smooth' });
         });
+      }
+    });
+  }
+
+  // 获奖图片灯箱：点击放大查看，支持键盘、背景关闭与左右切换
+  function initLightbox() {
+    var lightbox = document.getElementById('award-lightbox');
+    if (!lightbox) {
+      return;
+    }
+
+    var img = lightbox.querySelector('.lightbox-img');
+    var caption = lightbox.querySelector('.lightbox-caption');
+    var closeBtn = lightbox.querySelector('[data-lightbox-close]');
+    var prevBtn = lightbox.querySelector('[data-lightbox-prev]');
+    var nextBtn = lightbox.querySelector('[data-lightbox-next]');
+    var triggers = Array.prototype.slice.call(
+      document.querySelectorAll('[data-drag-carousel] .drag-item')
+    );
+    var items = [];
+    var current = -1;
+    var lastFocused = null;
+
+    var show = function (index) {
+      if (!items.length) {
+        return;
+      }
+      current = (index + items.length) % items.length;
+      img.src = items[current].getAttribute('src');
+      var alt = items[current].getAttribute('alt') || '';
+      img.alt = alt;
+      caption.textContent = alt;
+    };
+
+    var open = function (index, trigger) {
+      items = Array.prototype.slice.call(
+        trigger.parentNode.querySelectorAll('.drag-item img')
+      );
+      lastFocused = trigger;
+      show(index);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      closeBtn.focus();
+    };
+
+    var close = function () {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    };
+
+    triggers.forEach(function (item, index) {
+      item.addEventListener('click', function () {
+        open(index, item);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', function () {
+      show(current - 1);
+    });
+    nextBtn.addEventListener('click', function () {
+      show(current + 1);
+    });
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) {
+        close();
+      }
+    });
+
+    lightbox.addEventListener('keydown', function (event) {
+      if (event.key !== 'Tab') {
+        return;
+      }
+      var focusable = [closeBtn, prevBtn, nextBtn];
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!lightbox.classList.contains('open')) {
+        return;
+      }
+      if (event.key === 'Escape') {
+        close();
+      } else if (event.key === 'ArrowLeft') {
+        show(current - 1);
+      } else if (event.key === 'ArrowRight') {
+        show(current + 1);
       }
     });
   }
