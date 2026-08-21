@@ -847,6 +847,8 @@ body.nav-open .nav-toggle {
 /* 获奖图片拖拽相册 */
 .award-gallery {
   padding: 28px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .award-gallery-head {
@@ -887,6 +889,8 @@ body.nav-open .nav-toggle {
 .drag-track {
   display: flex;
   gap: 16px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .drag-item {
@@ -2744,6 +2748,7 @@ header.site-header {
 
   .proof-grid > * {
     grid-area: auto !important;
+    min-width: 0;
   }
 
   .award-gallery {
