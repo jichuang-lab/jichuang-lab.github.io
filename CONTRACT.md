@@ -8,7 +8,7 @@
 | 文件 | 职责 |
 |---|---|
 | `index.html` | 页面结构，含全部区块、导航、占位图片容器 |
-| `css/style.css` | 设计令牌、玻璃拟态、bento grid、响应式、动效样式 |
+| `css/style.css` | 设计令牌、Neo-Brutalism 卡片/硬阴影、bento grid、响应式、动效样式 |
 | `js/main.js` | 入场揭示、错位延迟、视差、数值滚动、汉堡菜单、`prefers-reduced-motion` 降级 |
 
 ## 2. 页面区块与锚点（index.html 必须包含的 section id）
@@ -102,31 +102,32 @@
 ## 4. 图片处理约定（HTML 必须遵循）
 
 - 每个展示图使用 `.media-frame` 容器 + 指定 ratio 类，内部为 `.placeholder`（占位）或 `img`
-- 占位块内容：暖米灰渐变底 + 居中 SVG 线性图标 + 一行文案（如"实验室图片 待补充"）
+- 占位块内容：斜纹底（repeating-linear-gradient）+ 居中 SVG 线性图标 + 一行文案（如"实验室图片 待补充"）
 - **禁用手写 emoji**；占位图标一律 SVG
 
 ## 5. CSS 设计令牌（style.css 必须定义，用 CSS 自定义属性）
 
-浅色暖调主题（米白底）+ 琥珀橙强调。
+> 2026-08 视觉改版：整体风格切换为 **Neo-Brutalism**（纸白底 + 纯黑粗边框 + 零模糊硬阴影）。
+> 完整规范与组件语义见 `DESIGN.md`；本节仅列核心令牌。
 
 ```
---bg: #fdfbf7        /* 页面底色（亮米白） */
---bg-elev: rgba(255,255,255,0.65)  /* 玻璃表面（白半透明） */
---glass-border: rgba(120,100,60,0.16)  /* 玻璃边 */
---accent-1: #d97706  /* 主强调琥珀 */
---accent-2: #f59e0b  /* 次强调亮琥珀 */
---accent-text: #b45309 /* 深琥珀（小字/文字强调） */
---text-1: #26211a    /* 主文字 */
---text-2: #5c554a    /* 次级文字 */
---gradient-text: linear-gradient(135deg,#a16207,#d97706) /* 深琥珀文字渐变 */
---gradient-btn: linear-gradient(135deg,#c2570a,#92400e)  /* 深橙按钮渐变 */
---radius-lg: 20px; --radius-md: 14px;
---ease: cubic-bezier(0.2, 0.8, 0.2, 1);   /* 缓动 */
---ease-emphasized: cubic-bezier(0.3, 0, 0, 1); /* 强调缓动 */
---dur: 300ms;
+--ink: #000            /* 文字/边框/硬阴影基色 */
+--paper: #fff          /* 页面底、卡片底 */
+--red: #ff6b6b         /* 主强调（主按钮、悬停阴影） */
+--teal: #4ecdc4        /* 电控视觉向 / 成功态 */
+--yellow: #ffe66d      /* kicker 底 / CTA 面板 */
+--mint: #95e1d3        /* 通识/信息 */
+--coral: #f38181       /* 硬件向 */
+--muted: #444          /* 次级文字 */
+--on-accent: #000      /* 糖果色表面固定黑字（WCAG，任何主题不得反转） */
+--border-w: 4px
+--shadow-sm/md/lg/xl   /* 4/6/8/10px 偏移 0 模糊 0 扩散 */
+--font-heading         /* 标题栈（本地字体，无 CDN） */
+--font-body            /* 等宽正文栈（本地字体，无 CDN） */
 ```
 
-强调色渐变：`linear-gradient(135deg, var(--accent-2), var(--accent-1))`（琥珀到深琥珀，用于装饰背景；文字渐变用 `--gradient-text`，按钮用 `--gradient-btn`）。
+铁律：圆角一律 0；禁止 backdrop-filter 与渐变光斑；强调色表面只配 `--on-accent` 黑字；
+`body[data-theme="night"]` 为唯一预览变体（令牌翻转），engineering/campus 参数静默回退默认。
 
 ## 6. 无障碍与兼容
 
@@ -137,7 +138,7 @@
 
 ## 7. 验收清单（验收子 Agent 依据）
 
-1. index.html 包含全部 7 个 section id 与导航链接
+1. index.html 包含全部 10 个 section id 与导航链接
 2. 三个文件 class/id 与本契约完全一致
 3. 无任何 emoji 出现在 HTML/CSS/JS 中
 4. CSS 定义了全部设计令牌并实际使用（无硬编码关键色）
