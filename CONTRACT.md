@@ -81,7 +81,7 @@
 ### 学习路线 Learn
 - `.learn-tongshi` — 通识篇横条（`.learn-tongshi-title` / `.learn-tongshi-desc` + `.tag-list`）
 - `.learn-grid` — 软件/硬件两列网格
-- `.learn-column` — 单列路线卡（`.learn-route` 路线标签、`.card-title`、`.learn-intro` 引言、`.learn-list` 有序步骤列表 `.learn-item`：`h4` 标题 + `p` 描述）
+- `.learn-column` — 单列路线卡（`.learn-route` 路线标签、`.card-title`、`.learn-intro` 引言、`.learn-list` 有序步骤列表 `.learn-item`：`h4` 标题 + `p` 描述，以及 `.learn-final` 路线终点高亮块：`strong` 标题 + 说明文字）
 
 ### 流程 Roadmap
 - `.timeline` — 时间线容器、`.timeline-item` 单节点（`.tl-phase` 阶段名、`.tl-title`、`.tl-desc`）
