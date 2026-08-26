@@ -781,9 +781,28 @@ a.tag {
   font-size: 14px;
 }
 
+.learn-confluence {
+  margin-top: 28px;
+  border-left: 10px solid var(--red);
+  rotate: -0.3deg;
+}
+
+.learn-confluence h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.learn-confluence p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
 .learn-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -798,6 +817,10 @@ a.tag {
 .learn-column:nth-child(3) {
   border-top: 8px solid var(--yellow);
   rotate: -0.4deg;
+}
+.learn-column:nth-child(4) {
+  border-top: 8px solid var(--mint);
+  rotate: 0.4deg;
 }
 
 .learn-route {
@@ -1807,6 +1830,7 @@ body[data-theme="night"] ::selection {
   .benefit-card,
   .track-card,
   .learn-tongshi,
+  .learn-confluence,
   .learn-column,
   .video-card,
   .moment-card-main,

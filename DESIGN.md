@@ -105,10 +105,10 @@ deepdemos 在红底上用白字（`--red` + `#fff` ≈ 2.8:1），**不满足 WC
 ### 4.2 卡片 `.glass-card`（类名沿用契约，含义已重写为"粗野卡片"）
 - 白底、4px 黑边、`shadow-lg`、padding 24–28。
 - **微旋转制造手工感**：同网格相邻卡 ±0.5~0.75deg 交错（nth-child odd/even），hover 归零并抬升 `translate(-3px,-3px)` + `12px 12px 0 var(--red)`。
-- 分类色条：卡顶部 8px 实线表达归属——电控视觉=teal、硬件=coral、机械=yellow、共通/信息=mint、重点=red。**色条是分类语义，不是装饰**，同一语义全页一致。
+- 分类色条：卡顶部 8px 实线表达归属——电控=teal、视觉=coral、硬件=yellow、机械=mint；横向信息条的左侧 10px 竖条：共通/信息=mint（如 `.learn-tongshi`）、进阶交汇=red（如 `.learn-confluence`）、重点=red。**色条是分类语义，不是装饰**，同一语义全页一致。路线卡的顶条色按卡片顺序分配（nth-child），与横条的左竖条互不冲突。
 
 ### 4.3 印章 / 贴纸（stamp）
-小尺寸 mono 加粗标签，`rotate(-2~-6deg)`，绝对定位骑在容器边缘（如 `top:-14px; left:-8px`），常配 `3px 3px 0` 小阴影。用途：`.video-index`（序号）、`.tl-phase`（阶段）、`.learn-route`（路线）、`.moment-index`。一屏印章 ≤3 个，多则失焦。
+小尺寸 mono 加粗标签，`rotate(-2~-6deg)`，绝对定位骑在容器边缘（如 `top:-14px; left:-8px`），常配 `3px 3px 0` 小阴影。用途：`.video-index`（序号）、`.tl-phase`（阶段）、`.learn-route`（路线）、`.moment-index`。一屏印章 ≤3 个，多则失焦；**豁免**：`.learn-route` 路线编号章共 4 枚（01–04 对应四条路线卡），属功能性编号而非装饰，不受此限。
 
 ### 4.4 标签 chip `.tag`
 mono 12px、3px 黑边、白底、`2px 2px 0` 阴影、padding 4px 10px；hover 黄底位移。不做圆胶囊（radius 0 铁律）。

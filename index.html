@@ -268,7 +268,7 @@
         <div class="section-head" data-reveal>
           <span class="kicker">Learning Path</span>
           <h2>该学什么？一张路线图。</h2>
-          <p class="section-desc">电控的知识点很多，小白想吃，却无从下嘴？别担心——只要愿意啃、花时间咀嚼，迟早会消化成自己的本领。我们更看重的，是学习的热情与坚持。</p>
+          <p class="section-desc">四条路线各有侧重，知识点都不算少，小白想吃却无从下嘴？别担心——只要愿意啃、花时间咀嚼，迟早会消化成自己的本领。我们更看重的，是学习的热情与坚持。</p>
         </div>
 
         <div class="learn-tongshi glass-card" data-reveal>
@@ -284,13 +284,13 @@
 
         <div class="learn-grid">
           <article class="learn-column glass-card" data-reveal data-delay="0">
-            <span class="learn-route">01 / 电控视觉向</span>
-            <h3 class="card-title">软件篇 · 让机器人看见并瞄准</h3>
-            <p class="learn-intro">从语言到算法，打通"识别—决策—执行"的完整链路。每一级都有明确的练手目标，按顺序啃下来即可。</p>
+            <span class="learn-route">01 / 电控向</span>
+            <h3 class="card-title">软件篇 · 让机器人动起来</h3>
+            <p class="learn-intro">从点亮一颗 LED 到让电机和云台听话。这条路整天和代码、电路板打交道，不学视觉也能一路走通。</p>
             <ol class="learn-list">
               <li class="learn-item">
-                <h4>C 与 Python 入门</h4>
-                <p>C 语言打底嵌入式开发，Python 负责脚本工具与视觉算法原型——两条腿走路，谁也不偏废。</p>
+                <h4>C 语言入门</h4>
+                <p>嵌入式开发绕不开的语言，把语法和指针吃透，底子就牢了。</p>
               </li>
               <li class="learn-item">
                 <h4>STM32 / ESP32 单片机开发</h4>
@@ -300,20 +300,37 @@
                 <h4>串口通信与 PID 控制</h4>
                 <p>用串口协议完成板间对话；PID 是让电机和云台"稳下来"的第一课，先会用，再逐步吃透原理。</p>
               </li>
-              <li class="learn-item">
-                <h4>图像处理与边缘 AI 部署</h4>
-                <p>PC 端用 OpenCV 入门图像处理，再把 YOLO 模型部署到 MaixCam、K230 这类边缘设备上跑起来。</p>
-              </li>
-              <li class="learn-item">
-                <h4>综合闭环系统</h4>
-                <p>把前面所有技能串成一条线：摄像头找到目标，云台实时咬住它——从这一步开始接触真实竞赛级任务。</p>
-              </li>
             </ol>
-            <p class="learn-final"><strong>路线终点 · 视觉引导云台瞄准</strong>独立完成一套"看得见、瞄得准"的完整闭环系统——这正是电子设计竞赛的技术主战场。</p>
+            <p class="learn-final"><strong>路线终点 · 云台稳定控制</strong>不靠摄像头，光靠算法就让云台又快又稳地指向目标。</p>
           </article>
 
           <article class="learn-column glass-card" data-reveal data-delay="100">
-            <span class="learn-route">02 / 硬件向</span>
+            <span class="learn-route">02 / 视觉向</span>
+            <h3 class="card-title">软件篇 · 让机器人看得见</h3>
+            <p class="learn-intro">从处理一张图片到跑起自己的检测模型，一台电脑就能上路，全程不用碰单片机。</p>
+            <ol class="learn-list">
+              <li class="learn-item">
+                <h4>Python 入门</h4>
+                <p>视觉方向的日常工具，语法学个大概就能开工，边写边查才是常态。</p>
+              </li>
+              <li class="learn-item">
+                <h4>OpenCV 图像处理</h4>
+                <p>读图、滤波、找轮廓、认颜色，先弄明白一张图在程序里是什么。</p>
+              </li>
+              <li class="learn-item">
+                <h4>深度学习与 YOLO</h4>
+                <p>自己标数据、训模型，让机器人认目标，不用手写规则硬凑。</p>
+              </li>
+              <li class="learn-item">
+                <h4>边缘设备部署</h4>
+                <p>把模型搬进 MaixCam、K230 这样巴掌大的设备，在真机上实时跑起来。</p>
+              </li>
+            </ol>
+            <p class="learn-final"><strong>路线终点 · 实时目标识别</strong>报出目标的坐标，剩下的交给电控线。</p>
+          </article>
+
+          <article class="learn-column glass-card" data-reveal data-delay="200">
+            <span class="learn-route">03 / 硬件向</span>
             <h3 class="card-title">硬件篇 · 从一颗元件到一块主板</h3>
             <p class="learn-intro">认识每一颗元件，读懂数据手册里的关键参数，最后让自己画的电路板真正通电运行。</p>
             <ol class="learn-list">
@@ -337,8 +354,8 @@
             <p class="learn-final"><strong>路线终点 · 智能小车主板</strong>以一块小车主板为载体贯穿全程，学完即可亲手把它装上车、跑起来。</p>
           </article>
 
-          <article class="learn-column glass-card" data-reveal data-delay="200">
-            <span class="learn-route">03 / 机械向</span>
+          <article class="learn-column glass-card" data-reveal data-delay="300">
+            <span class="learn-route">04 / 机械向</span>
             <h3 class="card-title">机械篇 · 给机器人一副骨架</h3>
             <p class="learn-intro">从草图约束开始，把想法变成图纸，再把图纸变成装得上、转得动的实物。</p>
             <ol class="learn-list">
@@ -357,6 +374,11 @@
             </ol>
             <p class="learn-final"><strong>路线终点 · 二轴云台支架</strong>设计并制造一副真正能用的云台支架——它与电控视觉组的瞄准闭环互为配套。</p>
           </article>
+        </div>
+
+        <div class="learn-confluence glass-card" data-reveal>
+          <h3 class="card-title">进阶交汇 · 视觉引导云台瞄准</h3>
+          <p>两条线分开选、单独走都行，底子也是相通的：电控练出的 C 语言和串口功底，到视觉这边部署设备时直接就能用；反过来，电控平时也离不开用 Python 写的小工具。等各自走通，就能在这套项目里会合：视觉负责找到目标、报出位置，电控负责让云台稳定跟上。这套"看得见、瞄得准"的闭环，正是电子设计竞赛的主战场。</p>
         </div>
 
         <div class="learn-attitude glass-card" data-reveal>
