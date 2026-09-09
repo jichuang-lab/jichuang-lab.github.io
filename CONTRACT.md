@@ -75,8 +75,10 @@
 - `.media-frame img` — 正式图片（`object-fit: cover/contain`）
 
 ### 方向 Tracks
-- `.track-grid` — 两卡片布局
+- `.track-grid` — 三卡片布局
 - `.track-card` — 单个方向卡（`.track-icon`、`.card-title`、`.card-desc`、`.tag-list` 技术标签组）
+- `.track-common` — 起点公共基础横条（`.card-title` / `.card-desc` + `.tag-list`，单片机·机械结构与画图·电力电子·硬件基础）
+- `.track-flow` — 最终流向横条（`.card-title` + `.card-desc`），说明电源类/控制类归宿
 
 ### 学习路线 Learn
 - `.learn-tongshi` — 通识篇横条（`.learn-tongshi-title` / `.learn-tongshi-desc` + `.tag-list`）

@@ -726,6 +726,26 @@ body.nav-open .nav-toggle {
   background: var(--mint);
 }
 
+.track-common {
+  border-left: 10px solid var(--mint);
+  margin-bottom: 28px;
+  rotate: 0.3deg;
+}
+
+.track-common .card-desc {
+  margin-bottom: 6px;
+}
+
+.track-flow {
+  margin-top: 28px;
+  border-left: 10px solid var(--red);
+  rotate: -0.3deg;
+}
+
+.track-flow .card-desc {
+  margin: 0;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -1830,6 +1850,8 @@ body[data-theme="night"] ::selection {
   .quick-item,
   .benefit-card,
   .track-card,
+  .track-common,
+  .track-flow,
   .learn-tongshi,
   .learn-confluence,
   .learn-column,
