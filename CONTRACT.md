@@ -80,7 +80,7 @@
 
 ### 学习路线 Learn
 - `.learn-tongshi` — 通识篇横条（`.learn-tongshi-title` / `.learn-tongshi-desc` + `.tag-list`）
-- `.learn-grid` — 四张路线卡（01 电控向 / 02 视觉向 / 03 硬件向 / 04 机械向，桌面 2×2）
+- `.learn-grid` — 三张路线卡（01 电控向 / 02 视觉向 / 03 硬件向）
 - `.learn-column` — 单列路线卡（`.learn-route` 路线标签、`.card-title`、`.learn-intro` 引言、`.learn-list` 有序步骤列表 `.learn-item`：`h4` 标题 + `p` 描述，以及 `.learn-final` 路线终点高亮块：`strong` 标题 + 说明文字）。电控与视觉是两条独立可选的软件路线，不得合并为单卡单线
 - `.learn-confluence` — 进阶交汇横条（`h3` + `p`），说明电控/视觉两条线底子互通及"视觉引导云台瞄准"会合项目
 
