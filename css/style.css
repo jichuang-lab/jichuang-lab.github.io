@@ -1494,7 +1494,8 @@ a.tag {
 }
 
 .footer-addr,
-.footer-copy {
+.footer-copy,
+.footer-stats {
   margin: 0;
   font-size: 12px;
   color: var(--muted);
