@@ -286,21 +286,28 @@
           <article class="learn-column glass-card" data-reveal data-delay="0">
             <span class="learn-route">01 / 电控向</span>
             <h3 class="card-title">软件篇 · 让机器人动起来</h3>
-            <p class="learn-intro">从点亮一颗 LED 到让电机和云台听话。这条路整天和代码、电路板打交道，不学视觉也能一路走通。</p>
+            <p class="learn-intro">从点亮一颗 LED 到让电机和云台听话。按 51 单片机 → C 语言 → STM32 的顺序啃，配好开发板一路实操；51 与 STM32 各有一道考核题另加技术面试，考核题和面试都很重要。</p>
             <ol class="learn-list">
               <li class="learn-item">
+                <h4>51 单片机入门</h4>
+                <p>跟着江协科技 51 单片机教程从零学起，内容建议全部看完。需要自行购买一块 51 单片机开发板，边学边练。</p>
+              </li>
+              <li class="learn-item">
                 <h4>C 语言入门</h4>
-                <p>嵌入式开发绕不开的语言，把语法和指针吃透，底子就牢了。</p>
+                <p>看浙江大学翁恺教程，学到 4.1.3 章节掌握基本知识即可，配合菜鸟教程边查边练。看不懂江协的代码，就回头补 C 语言。</p>
               </li>
               <li class="learn-item">
-                <h4>STM32 / ESP32 单片机开发</h4>
-                <p>GPIO、定时器、中断、PWM，先让板子听你的话。两个平台二选一主攻即可，基本功完全互通。</p>
-              </li>
-              <li class="learn-item">
-                <h4>串口通信与 PID 控制</h4>
-                <p>用串口协议完成板间对话；PID 是让电机和云台"稳下来"的第一课，先会用，再逐步吃透原理。</p>
+                <h4>STM32 单片机</h4>
+                <p>江协科技 STM32 教程，难度比 51 单片机更大，同样建议全部看完，打通更强的片上外设。</p>
               </li>
             </ol>
+            <ul class="tag-list" aria-label="电控向教程与资料">
+              <li><a class="tag" href="https://www.bilibili.com/video/BV1Mb411e7re/" target="_blank" rel="noopener">江协科技 · 51 单片机教程</a></li>
+              <li><a class="tag" href="https://www.bilibili.com/video/BV1dr4y1n7vA/" target="_blank" rel="noopener">翁恺 · C 语言程序设计</a></li>
+              <li><a class="tag" href="https://www.runoob.com/cprogramming/c-tutorial.html" target="_blank" rel="noopener">菜鸟教程 · C 语言教程</a></li>
+              <li><a class="tag" href="https://www.bilibili.com/video/BV1th411z7sn/" target="_blank" rel="noopener">江协科技 · STM32 教程</a></li>
+              <li><a class="tag" href="assets/docs/diankong-freshman-guide.docx" download>下载路线原文档 (.docx)</a></li>
+            </ul>
             <p class="learn-final"><strong>路线终点 · 云台稳定控制</strong>不靠摄像头，光靠算法就让云台又快又稳地指向目标。</p>
           </article>
 
@@ -336,21 +343,26 @@
             <ol class="learn-list">
               <li class="learn-item">
                 <h4>元件认知</h4>
-                <p>从电阻电容到二极管、MOS 管，建立元件手感；同步学会翻数据手册，看懂耐压、耐流与封装。</p>
+                <p>熟悉电阻、电容、电感、二极管、三极管、MOS 管、比较器、运算放大器，跟着硬件工程师入门教程系统过一遍，建立元件手感。</p>
               </li>
               <li class="learn-item">
                 <h4>电路基础与电源拓扑</h4>
-                <p>掌握基本电路定律之后，重点搞懂 LDO 与 DC-DC 两类电源方案的原理、取舍与选型。</p>
+                <p>掌握基本电路定律之后，重点搞懂 LDO 与 DC-DC（BOOST、BUCK）电源方案的原理、取舍与选型，进阶可到立创 EDA 开源广场找开源项目跟着学。</p>
               </li>
               <li class="learn-item">
                 <h4>嘉立创 EDA 设计</h4>
-                <p>自建元件封装、绘制原理图、完成 PCB 布线，把一块板子的设计流程从头走一遍。</p>
+                <p>跟着零基础入门 PCB 设计教程，了解并掌握原理图与 PCB 的绘制：自建元件封装、绘制原理图、完成 PCB 布线，把一块板子的设计流程从头走一遍。</p>
               </li>
               <li class="learn-item">
                 <h4>焊接调试</h4>
                 <p>烙铁上的真功夫：焊得上、测得通、排得出故障，让自己设计的电路板第一次点亮。</p>
               </li>
             </ol>
+            <ul class="tag-list" aria-label="硬件向教程与资料">
+              <li><a class="tag" href="https://www.bilibili.com/video/BV1gHSyY3E6q" target="_blank" rel="noopener">硬件工程师入门教程</a></li>
+              <li><a class="tag" href="https://www.bilibili.com/video/BV1At421h7Ui/" target="_blank" rel="noopener">嘉立创 EDA · PCB 设计教程</a></li>
+              <li><a class="tag" href="assets/docs/hardware-freshman-roadmap.docx" download>下载路线原文档 (.docx)</a></li>
+            </ul>
             <p class="learn-final"><strong>路线终点 · 智能小车主板</strong>以一块小车主板为载体贯穿全程，学完即可亲手把它装上车、跑起来。</p>
           </article>
 
